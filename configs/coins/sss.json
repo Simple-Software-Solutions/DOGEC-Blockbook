@@ -1,0 +1,65 @@
+{
+    "coin": {
+        "name": "Simple Software Solutions",
+        "shortcut": "SSS",
+        "label": "SSS",
+        "alias": "SSS"
+    },
+    "ports": {
+        "backend_rpc": 8059,
+        "backend_message_queue": 38359,
+        "blockbook_internal": 9059,
+        "blockbook_public": 9159
+    },
+    "ipc": {
+        "rpc_url_template": "http://127.0.0.1:{{.Ports.BackendRPC}}",
+        "rpc_user": "rpc",
+        "rpc_pass": "dogecrpc",
+        "rpc_timeout": 25,
+        "message_queue_binding_template": "tcp://127.0.0.1:{{.Ports.BackendMessageQueue}}"
+    },
+    "backend": {
+        "package_name": "backend-sss",
+        "package_revision": "satoshilabs-1",
+        "system_user": "sss",
+        "version": "1.0.1",
+        "binary_url": "https://github.com/Simple-Software-Solutions/SSS-Core/releases/download/V1.0/Sssolutions-ubuntu16.tar.gz",
+        "verification_type": "sha256",
+        "verification_source": "e084d8c104001ffe33cfe0941e63d06e694eae5837e2aeaf53375bfd333f690e",
+        "extract_command": "tar -C backend --strip 1 -xf",
+        "exclude_files": ["bin/dogecash-qt"],
+        "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/sssolutionsd -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
+        "logrotate_files_template": "{{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend/*.log",
+        "postinst_script_template": "",
+        "service_type": "forking",
+        "service_additional_params_template": "",
+        "protect_memory": false,
+        "mainnet": true,
+        "server_config_file": "bitcoin_like.conf",
+        "client_config_file": "bitcoin_like_client.conf",
+        "additional_params": {
+            "whitelist": "127.0.0.1"
+        }
+    },
+    "blockbook": {
+      "package_name": "blockbook-sss",
+      "system_user": "blockbook-sss",
+      "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
+      "public_binding_template": ":{{.Ports.BlockbookPublic}}",
+      "explorer_url": "",
+      "additional_params": "",
+      "block_chain": {
+        "parse": true,
+        "mempool_workers": 8,
+        "mempool_sub_workers": 2,
+        "slip44": 385,
+        "xpub_magic": 36513075,
+        "block_addresses_to_keep": 300,
+        "additional_params": {}
+      }
+    },
+    "meta": {
+        "package_maintainer": "akshaynexus",
+        "package_maintainer_email": "akshaycm@hotmail.com"
+    }
+}
