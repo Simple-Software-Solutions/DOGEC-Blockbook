@@ -21,6 +21,7 @@ import (
 	"blockbook/bchain/coins/myriad"
 	"blockbook/bchain/coins/namecoin"
 	"blockbook/bchain/coins/pivx"
+	"blockbook/bchain/coins/sss"
 	"blockbook/bchain/coins/vertcoin"
 	"blockbook/bchain/coins/xzc"
 	"blockbook/bchain/coins/zec"
