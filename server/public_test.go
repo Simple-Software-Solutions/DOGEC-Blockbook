@@ -541,7 +541,7 @@ func socketioTests_BitcoinType(t *testing.T, ts *httptest.Server) {
 		{
 			name: "getInfo",
 			req:  socketioReq{"getInfo", []interface{}{}},
-            want: `{"result":{"blocks":225494,"testnet":true,"network":"fakecoin","subversion":"/Fakecoin:0.0.1/","coin_name":"Fakecoin","about":"DOGEC Blockchain explorer - made with TREZOR Blockbook indexer."}}`,
+            want: `{"result":{"blocks":225494,"testnet":true,"network":"fakecoin","subversion":"/Fakecoin:0.0.1/","coin_name":"Fakecoin","about":"SSS Blockchain explorer - made with TREZOR Blockbook indexer."}}`,
 		},
 		{
 			name: "estimateFee",
