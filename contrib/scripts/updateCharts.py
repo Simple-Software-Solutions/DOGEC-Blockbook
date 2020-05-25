@@ -10,7 +10,7 @@ import json
 
 # CONFIG
 rpc_user = "rpc"
-rpc_pass = "dogecrpc"
+rpc_pass = "sssrpc"
 rpc_host = "127.0.0.1"
 rpc_port = "8059"
 rpc_url = "http://%s:%s@%s" % (rpc_user, rpc_pass, rpc_host)
@@ -25,7 +25,7 @@ conn = AuthServiceProxy(rpc_url, timeout=1000, connection=httpConnection)
 
 # Read data from file
 try:
-	with open("zdogecsupplydata.json", 'r') as f:
+	with open("zssssupplydata.json", 'r') as f:
 		data = json.load(f)
 except FileNotFoundError:
 	# first run - fill initial empty supply
@@ -80,7 +80,7 @@ while data["lastBlockNum"] + 100 <= blockCount:
 
 # Save to file
 try:
-	with open("zdogecsupplydata.json", 'w+') as f:
+	with open("zssssupplydata.json", 'w+') as f:
 		json.dump(data, f)
 except:
 	pass
