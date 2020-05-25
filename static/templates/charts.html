@@ -37,7 +37,7 @@
         </div>
     </div>
 </div>
-<canvas id="zdogecsupplyChart" width="1600" height="900" style="margin-top: 5px"></canvas>
+<canvas id="zssssupplyChart" width="1600" height="900" style="margin-top: 5px"></canvas>
 
 <script type="text/javascript">
     supplyJson = {
@@ -45,8 +45,8 @@
             $data
         }
     }
-    const zdogecsupplydata = JSON.parse(supplyJson);
-    var ctx = document.getElementById("zdogecsupplyChart");
+    const zssssupplydata = JSON.parse(supplyJson);
+    var ctx = document.getElementById("zssssupplyChart");
     var dataSet;
     var blocksAxis;
 
@@ -63,30 +63,30 @@
         var supplyTotal = [];
 
         // trim timeRange
-        var total_len = zdogecsupplydata.blocks_axis.length;
+        var total_len = zssssupplydata.blocks_axis.length;
         if (timeRange > 0) {
-            var ba = zdogecsupplydata.blocks_axis.slice(total_len - timeRange, total_len);
-            var zps1 = zdogecsupplydata.denom_1.slice(total_len - timeRange, total_len);
-            var zps5 = zdogecsupplydata.denom_5.slice(total_len - timeRange, total_len);
-            var zps10 = zdogecsupplydata.denom_10.slice(total_len - timeRange, total_len);
-            var zps50 = zdogecsupplydata.denom_50.slice(total_len - timeRange, total_len);
-            var zps100 = zdogecsupplydata.denom_100.slice(total_len - timeRange, total_len);
-            var zps500 = zdogecsupplydata.denom_500.slice(total_len - timeRange, total_len);
-            var zps1000 = zdogecsupplydata.denom_1000.slice(total_len - timeRange, total_len);
-            var zps5000 = zdogecsupplydata.denom_5000.slice(total_len - timeRange, total_len);
-            var zpst = zdogecsupplydata.total.slice(total_len - timeRange, total_len);
+            var ba = zssssupplydata.blocks_axis.slice(total_len - timeRange, total_len);
+            var zps1 = zssssupplydata.denom_1.slice(total_len - timeRange, total_len);
+            var zps5 = zssssupplydata.denom_5.slice(total_len - timeRange, total_len);
+            var zps10 = zssssupplydata.denom_10.slice(total_len - timeRange, total_len);
+            var zps50 = zssssupplydata.denom_50.slice(total_len - timeRange, total_len);
+            var zps100 = zssssupplydata.denom_100.slice(total_len - timeRange, total_len);
+            var zps500 = zssssupplydata.denom_500.slice(total_len - timeRange, total_len);
+            var zps1000 = zssssupplydata.denom_1000.slice(total_len - timeRange, total_len);
+            var zps5000 = zssssupplydata.denom_5000.slice(total_len - timeRange, total_len);
+            var zpst = zssssupplydata.total.slice(total_len - timeRange, total_len);
         } else {
             // display all-time data
-            var ba = zdogecsupplydata.blocks_axis;
-            var zps1 = zdogecsupplydata.denom_1;
-            var zps5 = zdogecsupplydata.denom_5;
-            var zps10 = zdogecsupplydata.denom_10;
-            var zps50 = zdogecsupplydata.denom_50;
-            var zps100 = zdogecsupplydata.denom_100;
-            var zps500 = zdogecsupplydata.denom_500;
-            var zps1000 = zdogecsupplydata.denom_1000;
-            var zps5000 = zdogecsupplydata.denom_5000;
-            var zpst = zdogecsupplydata.total;
+            var ba = zssssupplydata.blocks_axis;
+            var zps1 = zssssupplydata.denom_1;
+            var zps5 = zssssupplydata.denom_5;
+            var zps10 = zssssupplydata.denom_10;
+            var zps50 = zssssupplydata.denom_50;
+            var zps100 = zssssupplydata.denom_100;
+            var zps500 = zssssupplydata.denom_500;
+            var zps1000 = zssssupplydata.denom_1000;
+            var zps5000 = zssssupplydata.denom_5000;
+            var zpst = zssssupplydata.total;
         }
 
         // Limit to ~120 points
@@ -194,7 +194,7 @@
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: 'DOGEC value'
+                            labelString: 'SSS value'
                         },
                         type: 'linear'
                     }],
