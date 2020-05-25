@@ -717,7 +717,7 @@ func (s *PublicServer) explorerSendTx(w http.ResponseWriter, r *http.Request) (t
 
 func (s *PublicServer) explorerCharts(w http.ResponseWriter, r *http.Request) (tpl, *TemplateData, error) {
 	data := s.newTemplateData()
-    absPath, _ := filepath.Abs("../plot_data/zdogecsupplydata.json")
+    absPath, _ := filepath.Abs("../plot_data/zssssupplydata.json")
     jsonFile, err := ioutil.ReadFile(absPath)
     // Load data from json
     if err != nil {
