@@ -23,7 +23,7 @@
         "package_revision": "satoshilabs-1",
         "system_user": "sss",
         "version": "1.0.1",
-        "binary_url": "https://github.com/Simple-Software-Solutions/SSS-Core/releases/download/V1.0/Sssolutions-ubuntu16.tar.gz",
+        "binary_url": "https://github.com/freakcoderz/SSS-Core/releases/download/1.0.1/SSSolutions-Core-V1.0.1-ubuntu16.tar.gz.tar",
         "extract_command": "tar -C backend --strip 1 -xf",
         "exclude_files": ["sssolutions-qt"],
         "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/sssolutionsd -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
