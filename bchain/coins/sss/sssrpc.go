@@ -1,27 +1,27 @@
 package sss
 
 import (
-	"SSS-Blockbook/bchain"
-	"SSS-Blockbook/bchain/coins/btc"
+	"blockbook/bchain"
+	"blockbook/bchain/coins/btc"
 	"encoding/json"
 
 	"github.com/golang/glog"
 )
 
 // SSS-BlockbookRPC is an interface to JSON-RPC bitcoind service.
-type SSS-BlockbookRPC struct {
+type sssRPC struct {
 	*btc.BitcoinRPC
     BitcoinGetChainInfo func() (*bchain.ChainInfo, error)
 }
 
 // NewSSSRPC returns new SSSRPC instance.
-func NewSSS-BlockbookRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
+func NewsssRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
 	b, err := btc.NewBitcoinRPC(config, pushHandler)
 	if err != nil {
 		return nil, err
 	}
 
-	s := &SSS-BlockbookRPC{
+	s := &sss-BlockbookRPC{
 		b.(*btc.BitcoinRPC),
         b.GetChainInfo,
 	}
@@ -33,7 +33,7 @@ func NewSSS-BlockbookRPC(config json.RawMessage, pushHandler func(bchain.Notific
 }
 
 // Initialize initializes SSSRPC instance.
-func (b *SSS-BlockbookRPC) Initialize() error {
+func (b *sssRPC) Initialize() error {
 	chainName, err := b.GetChainInfoAndInitializeMempool(b)
 	if err != nil {
 		return err
@@ -43,7 +43,7 @@ func (b *SSS-BlockbookRPC) Initialize() error {
 	params := GetChainParams(chainName)
 
 	// always create parser
-	b.Parser = NewSSS-BlockbookParser(params, b.ChainConfig)
+	b.Parser = NewsssParser(params, b.ChainConfig)
 
 	// parameters for getInfo request
 	if params.Net == MainnetMagic {
@@ -70,7 +70,7 @@ type ResGetInfo struct {
 	Error  *bchain.RPCError `json:"error"`
 	Result struct {
         MoneySupply   json.Number `json:"moneysupply"`
-        ZerocoinSupply  bchain.ZCdenoms    `json:"zSSS-Blockbooksupply"`
+        ZerocoinSupply  bchain.ZCdenoms    `json:"zssssupply"`
 	} `json:"result"`
 }
 
@@ -91,13 +91,13 @@ type ResGetMasternodeCount struct {
 }
 
 // GetNextSuperBlock returns the next superblock height after nHeight
-func (b *SSS-BlockbookRPC) GetNextSuperBlock(nHeight int) int {
+func (b *sssbookRPC) GetNextSuperBlock(nHeight int) int {
     return nHeight - nHeight % nBlocksPerPeriod + nBlocksPerPeriod
 }
 
 // GetChainInfo returns information about the connected backend
 // PIVX adds MoneySupply and ZerocoinSupply to btc implementation
-func (b *SSS-BlockbookRPC) GetChainInfo() (*bchain.ChainInfo, error) {
+func (b *sssbookRPC) GetChainInfo() (*bchain.ChainInfo, error) {
     rv, err := b.BitcoinGetChainInfo()
     if err != nil {
         return nil, err
@@ -147,7 +147,7 @@ type ResFindSerial struct {
 	} `json:"result"`
 }
 
-func (b *SSS-BlockbookRPC) Findzcserial(serialHex string) (string, error) {
+func (b *sssRPC) Findzcserial(serialHex string) (string, error) {
     glog.V(1).Info("rpc: findserial")
 
 	res := ResFindSerial{}
