@@ -42,7 +42,7 @@ RUN \
     trap cleanup EXIT && \
     cd $GOPATH/src && \
     git clone https://github.com/freakcoderz/SSS-Blockbook.git && \
-    cd blockbook && \
+    cd SSS-Blockbook && \
     dep ensure -vendor-only && \
     cp -r vendor /build/vendor
 
