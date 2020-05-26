@@ -1,12 +1,12 @@
 package main
 
 import (
-	"blockbook/api"
-	"blockbook/bchain"
-	"blockbook/bchain/coins"
-	"blockbook/common"
-	"blockbook/db"
-	"blockbook/server"
+	"SSS-Blockbook/api"
+	"SSS-Blockbook/bchain"
+	"SSS-Blockbook/bchain/coins"
+	"SSS-Blockbook/common"
+	"SSS-Blockbook/db"
+	"SSS-Blockbook/server"
 	"context"
 	"flag"
 	"log"
