@@ -166,4 +166,3 @@ func (b *SSSRPC) Findzcserial(serialHex string) (string, error) {
 	}
 	return res.Result.Txid, nil
 }
-© 2020 GitHub, Inc.
