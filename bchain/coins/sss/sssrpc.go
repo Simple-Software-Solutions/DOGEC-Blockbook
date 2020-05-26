@@ -1,8 +1,8 @@
 package sss
 
 import (
-	"blockbook/bchain"
-	"blockbook/bchain/coins/btc"
+	"SSS-Blockbook/bchain"
+	"SSS-Blockbook/bchain/coins/btc"
 	"encoding/json"
 
 	"github.com/golang/glog"
